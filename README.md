@@ -56,4 +56,4 @@ grace.shutdown.server.container=undertow
 
 ```
 
-其他操作与tomcat一致
+其他操作与tomcat一致,参考项目:https://github.com/corentin59/spring-boot-graceful-shutdown
