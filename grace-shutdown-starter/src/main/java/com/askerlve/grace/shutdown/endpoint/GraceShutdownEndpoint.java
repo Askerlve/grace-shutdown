@@ -7,6 +7,7 @@ import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.actuate.endpoint.annotation.Endpoint;
 import org.springframework.boot.actuate.endpoint.annotation.ReadOperation;
+import org.springframework.boot.actuate.endpoint.annotation.WriteOperation;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.ApplicationListener;
@@ -22,7 +23,7 @@ import java.util.Map;
  * @Description: 优雅关机Endpoint
  * @date 2018/5/31下午6:27
  */
-@Endpoint(id = "grace")
+@Endpoint(id = "graceShutdown")
 public class GraceShutdownEndpoint implements ApplicationListener<ContextClosedEvent>, ApplicationContextAware {
 
     /**
@@ -90,7 +91,7 @@ public class GraceShutdownEndpoint implements ApplicationListener<ContextClosedE
      *
      * @return
      */
-    @ReadOperation
+    @WriteOperation
     public Map<String, Object> graceShutdown() {
         if (this.context == null) {
             return NO_CONTEXT_MESSAGE;
