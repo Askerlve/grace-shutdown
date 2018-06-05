@@ -13,8 +13,8 @@ server.port=9088
 logging.config=classpath:log4j2.xml
 #访问路径，配置后就和1.x版本路径一样
 management.endpoints.web.base-path=/
-# 暴露我们自定义的shutdown，也可以暴露单个或多个
-management.endpoints.web.exposure.include=graceShutdown
+# 暴露我们自定义的endpoints，也可以暴露单个或多个
+management.endpoints.web.exposure.include=graceShutdown,health
 # 关闭原生shutdown
 management.endpoint.shutdown.enabled=false
 
@@ -45,8 +45,8 @@ server.port=9088
 logging.config=classpath:log4j2.xml
 #访问路径，配置后就和1.x版本路径一样
 management.endpoints.web.base-path=/
-# 暴露我们自定义的shutdown，也可以暴露单个或多个
-management.endpoints.web.exposure.include=graceShutdown
+# 暴露我们自定义的endpoints，也可以暴露单个或多个
+management.endpoints.web.exposure.include=graceShutdown,health
 # 关闭原生shutdown
 management.endpoint.shutdown.enabled=false
 
